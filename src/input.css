@@ -173,7 +173,9 @@ header.fixHeader {
   font-weight: 600;
   color: var(--primarycolor);
 }
-
+.feature {
+  overflow: hidden;
+}
 .featured-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, auto));
@@ -183,6 +185,7 @@ header.fixHeader {
   column-gap: 5rem;
   margin-top: 2rem;
   white-space: nowrap;
+  overflow: hidden;
 }
 .featured-img {
   display: inline-block;
@@ -192,6 +195,7 @@ header.fixHeader {
   width: 150px;
   height: auto;
   object-fit: contain;
+  overflow: hidden;
 }
 
 .about {
@@ -223,11 +227,14 @@ header.fixHeader {
   margin: 1rem 0 1rem 0;
 }
 .About-Box {
+  padding: 2rem;
   white-space: nowrap;
+  overflow: hidden;
 }
 .About-Box .box {
   transition: 0.5s ease;
   cursor: pointer;
+  border-radius: 1rem;
 }
 .About-Box .box:hover {
   background: var(--primarycolor);
@@ -396,6 +403,18 @@ img {
   margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 600;
+  position: relative;
+}
+.footer-box h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  background-color: var(--bgcolor);
+  height: 3px;
+  top: 1.5rem;
+  box-sizing: border-box;
+  width: 50%;
 }
 .footer-box a {
   font-size: 0.8rem;
@@ -509,6 +528,10 @@ img {
     margin-top: 4.8rem;
     margin-bottom: 2rem;
   }
+  .About-Box {
+    padding: 2rem;
+    overflow: hidden;
+  }
 }
 @media (max-width: 960px) {
   .login {
@@ -552,8 +575,9 @@ img {
     display: none;
   }
   .navbar {
-    clip-path: circle(0% at 100% 1%);
+    overflow: hidden;
   }
+
   .navbar.active {
     position: absolute;
     top: 100%;
@@ -563,7 +587,6 @@ img {
     flex-direction: column;
     background: var(--secondarycolor);
     text-align: center;
-    clip-path: circle(144% at 100% 1%);
     transition: 0.6s;
   }
 

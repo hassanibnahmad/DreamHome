@@ -681,6 +681,14 @@ video {
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 /*  fonts link  */
 
 * {
@@ -873,6 +881,10 @@ header.fixHeader {
   color: var(--primarycolor);
 }
 
+.feature {
+  overflow: hidden;
+}
+
 .featured-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, auto));
@@ -883,6 +895,7 @@ header.fixHeader {
        column-gap: 5rem;
   margin-top: 2rem;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .featured-img {
@@ -895,6 +908,7 @@ header.fixHeader {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+  overflow: hidden;
 }
 
 .about {
@@ -930,12 +944,15 @@ header.fixHeader {
 }
 
 .About-Box {
+  padding: 2rem;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .About-Box .box {
   transition: 0.5s ease;
   cursor: pointer;
+  border-radius: 1rem;
 }
 
 .About-Box .box:hover {
@@ -1134,6 +1151,19 @@ img {
   margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 600;
+  position: relative;
+}
+
+.footer-box h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  background-color: var(--bgcolor);
+  height: 3px;
+  top: 1.5rem;
+  box-sizing: border-box;
+  width: 50%;
 }
 
 .footer-box a {
@@ -1268,6 +1298,11 @@ img {
     margin-top: 4.8rem;
     margin-bottom: 2rem;
   }
+
+  .About-Box {
+    padding: 2rem;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 960px) {
@@ -1320,8 +1355,7 @@ img {
   }
 
   .navbar {
-    -webkit-clip-path: circle(0% at 100% 1%);
-            clip-path: circle(0% at 100% 1%);
+    overflow: hidden;
   }
 
   .navbar.active {
@@ -1333,8 +1367,6 @@ img {
     flex-direction: column;
     background: var(--secondarycolor);
     text-align: center;
-    -webkit-clip-path: circle(144% at 100% 1%);
-            clip-path: circle(144% at 100% 1%);
     transition: 0.6s;
   }
 

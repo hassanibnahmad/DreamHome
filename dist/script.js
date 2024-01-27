@@ -1,3 +1,5 @@
+// transition link
+
 // ----------MENU-------------------
 
 const menuHamburger = document.querySelector(".humberger");
