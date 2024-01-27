@@ -752,7 +752,6 @@ header {
 
 header.fixHeader {
   padding: 8px 0 0 0;
-  background-color: red;
 }
 
 .nav {
@@ -1347,7 +1346,7 @@ img {
 
 @media (max-width: 768px) {
   header {
-    padding: 10px 0;
+    padding: 8px 0;
   }
 
   .nav ul {
