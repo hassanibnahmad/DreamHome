@@ -751,8 +751,8 @@ header {
 }
 
 header.fixHeader {
-  padding: 8px 35px;
-  /* background-color: red; */
+  padding: 8px 0 0 0;
+  background-color: red;
 }
 
 .nav {
