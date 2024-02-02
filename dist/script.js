@@ -33,8 +33,13 @@ window.onscroll = () => {
 var swiper = new Swiper(".properties-slider", {
   slidesPerView: 3,
   spaceBetween: 30,
-  // slidesPerGroup: 3,
+  // slidesPerView: 3,
+  spaceBetween: 20,
   loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
   grabCursor: true,
   loopFillGroupWithBlank: true,
   pagination: {

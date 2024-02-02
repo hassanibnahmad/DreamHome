@@ -236,6 +236,7 @@ header.fixHeader {
   border-radius: 1rem;
 }
 .About-Box .box:hover {
+  color: #ffffff;
   background: var(--primarycolor);
 }
 
@@ -292,15 +293,12 @@ header.fixHeader {
 }
 /* .swiper {
   background-color: #192f6a;
-}
+}*/
 .swiper-pagination {
-  background: red;
-} */
+  position: unset;
+}
 .swiper-button-next,
 .swiper-button-prev {
-  color: #0ef;
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   padding: 20px;
 }
@@ -464,7 +462,7 @@ img {
   gap: 3rem;
   align-items: center;
   min-height: 100vh;
-  margin-top: 5rem;
+  margin-top: 5.5rem;
 }
 .login-content {
   display: flex;
@@ -480,10 +478,12 @@ img {
 }
 .login-content form span {
   font-size: 1rem;
+  font-weight: 500;
   color: #8a8a8a;
   margin-bottom: 5px;
 }
-.login-content form input {
+.login-content form input,
+textarea {
   border: 1px solid #8a8a8a;
   outline: none;
   padding: 10px;
@@ -492,6 +492,7 @@ img {
   border-radius: 8px;
   background: var(--bgcolor);
 }
+
 .login-content form .button {
   outline: none;
   border: none;
