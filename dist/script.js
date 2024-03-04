@@ -27,6 +27,17 @@ window.onscroll = () => {
   navLinks.classList.remove("active");
 };
 
+//----------------------------Darkmode----------------------------------------
+let switchElement = document.getElementById("switch");
+
+switchElement.addEventListener("change", () => {
+  document.documentElement.classList.toggle("darkmode");
+});
+
+if (document.documentElement.classList.contains("darkmode")) {
+  switchElement.checked = true;
+}
+
 // ----------------------dublicate the featured-content class---------------------
 // CARDS SLIDER USING Swiperjs.com
 

@@ -21,6 +21,18 @@
   --secondarycolor: #192f6a;
   --text-color: #314862;
   --bgcolor: #ffffff;
+  --box-i-color: #f6f6f6;
+  --properties-bgcolor: #fbfbfb;
+  --unchange: #ffffff;
+  --box-shaddow: 2px 2px 18px rgb(14 52 54 / 15%);
+}
+.darkmode {
+  --primarycolor: #2288ff;
+  --secondarycolor: #192f6a;
+  --text-color: #ffffff;
+  --bgcolor: #171a1c;
+  --box-i-color: #090909;
+  --properties-bgcolor: #0e0e0e;
   --box-shaddow: 2px 2px 18px rgb(14 52 54 / 15%);
 }
 
@@ -29,6 +41,7 @@ img {
 }
 body {
   /* background: #121b25; */
+  background: var(--bgcolor);
   color: var(--text-color);
 }
 section {
@@ -89,7 +102,10 @@ header.fixHeader {
 }
 .navbar {
   display: flex;
+  /* flex: 1; */
+  text-align: center;
 }
+
 .navbar a {
   padding: 8px 17px;
   color: var(--text-color);
@@ -100,7 +116,47 @@ header.fixHeader {
 .navbar a:hover {
   color: var(--primarycolor);
 }
+/*---------------------Darkmode toggel------------------------*/
+.toggle {
+  background-color: var(--bgcolor);
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primarycolor);
+  margin-left: 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  line-height: 3.2;
+}
 
+.input {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 500ms;
+}
+
+.icon--moon {
+  transition-delay: 200ms;
+}
+
+.icon--sun {
+  transform: scale(0);
+}
+
+#switch:checked + .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}
+/*-----------------------------------------------------------*/
 /* #menu-icon {
   font-size: 24px;
   cursor: pointer;
@@ -160,7 +216,7 @@ header.fixHeader {
   padding-left: 35px;
 }
 .home-text h1 {
-  color: var(--bgcolor);
+  color: #ffffff;
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -185,6 +241,12 @@ header.fixHeader {
   margin-top: 2rem;
   white-space: nowrap;
   overflow: hidden;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  /* background-color: #d3a9a9; */
+}
+.featured-content.darkmode {
+  background-color: red;
 }
 .featured-img {
   display: inline-block;
@@ -234,9 +296,11 @@ header.fixHeader {
   transition: 0.5s ease;
   cursor: pointer;
   border-radius: 1rem;
+  color: var(--bgcolor);
+  background: var(--secondarycolor);
 }
 .About-Box .box:hover {
-  color: #ffffff;
+  color: #000106;
   background: var(--primarycolor);
 }
 
@@ -247,7 +311,7 @@ header.fixHeader {
 }
 .box {
   padding: 20px;
-  background: var(--bgcolor);
+  background: var(--properties-bgcolor);
   box-shadow: var(--box-shaddow);
   text-align: center;
   border-radius: 2rem;
@@ -260,7 +324,7 @@ header.fixHeader {
 .sales .box i {
   padding: 10px;
   border-radius: 50%;
-  background: #f6f6fe;
+  background: var(--box-i-color);
   color: var(--primarycolor);
   font-size: 20px;
 }
@@ -288,7 +352,7 @@ header.fixHeader {
   font-size: 1rem;
 }
 .properties {
-  background: #fbfbfb;
+  background: var(--properties-bgcolor);
   border-radius: 2rem;
 }
 /* .swiper {
@@ -382,8 +446,10 @@ img {
   box-shadow: var(--box-shaddow);
   padding: 6px 10px;
   border-radius: 5rem;
+  border: 1px #ffffff solid;
 }
-.newsletter form input {
+.newsletter form input[type="email"] {
+  background: transparent;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -400,7 +466,7 @@ img {
 
 .footer {
   background: var(--primarycolor);
-  color: var(--bgcolor);
+  color: #ffffff;
   border-radius: 5rem 0 0 0;
 }
 .footer-content {
@@ -435,12 +501,12 @@ img {
 }
 .footer-box a {
   font-size: 0.8rem;
-  color: var(--bgcolor);
+  color: #ffffff;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
 .footer-box a:hover {
-  color: var(--text-color);
+  color: var(--secondarycolor);
 }
 .social a {
   font-size: 20px;
@@ -452,7 +518,7 @@ img {
 .copyright {
   padding: 20px;
   text-align: center;
-  color: var(--bgcolor);
+  color: #ffffff;
   background: var(--primarycolor);
 }
 /* ------------------------ Login ------------- */
@@ -636,7 +702,7 @@ textarea {
     margin: 1rem;
     padding: 1rem;
     border-radius: 8px;
-    color: var(--bgcolor);
+    color: var(--unchange);
   }
   .navbar a:hover {
     background: var(--primarycolor);
